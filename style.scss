@@ -1,0 +1,117 @@
+@import url('https://fonts.cdnfonts.com/css/lazy-bear');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lazy Bear', sans-serif;
+}
+
+body{
+    background: #000;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    h1{
+        font-size: 5rem;
+        text-align: center;
+        margin-bottom: 2rem;
+        //un dégradé rose et bleu pastel
+        background: linear-gradient(to right, #e985ff 20%, #ffffff 40%, #e985ff 80%);
+        background-size: 200% auto;
+
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: shine 2s linear infinite;
+        @keyframes shine {
+            to {
+                background-position: 200% center;
+            }
+        }
+    }
+
+
+    form{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        input{
+            font-size: 3rem;
+            border: none;
+            background: transparent;
+            color: white;
+            text-align: center;
+            &:focus{
+                outline: none;
+            }
+        }
+
+        button{
+            font-size: 3rem;
+            border: none;
+            background-color: #e985ff;
+            color: #fff;
+            cursor: pointer;
+            &:focus{
+                outline: none;
+            }
+            width: 70px;
+            height: 70px;
+            border-radius: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    a{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin: 1rem;
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.5rem;
+        &:hover{
+            color: #e985ff;
+        }
+    }
+
+    div.centered{
+        position: relative;
+        width: fit-content;
+        height: fit-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        h1{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            filter: drop-shadow(0 0 0.75rem #e985ff);
+        }
+        svg{
+            animation: zoom 2s ease-in-out infinite;
+            path{
+                fill: #a400c7;
+            }
+            @keyframes zoom {
+                0%{
+                    transform: scale(15);
+                }
+                50%{
+                    transform: scale(16);
+                }
+                100%{
+                    transform: scale(15);
+                }
+            }
+        }
+    }
+}
